@@ -5,6 +5,7 @@ def env(name: str, default: str | None = None) -> str | None:
 
 CHATWOOT_BASE_URL = env("CHATWOOT_BASE_URL")
 CHATWOOT_API_TOKEN = env("CHATWOOT_API_TOKEN")
+CHATWOOT_WEBHOOK_SECRET = env("CHATWOOT_WEBHOOK_SECRET")  # opcional
 OPENAI_API_KEY = env("OPENAI_API_KEY")
-REDIS_URL = env("REDIS_URL", "redis://redis:6379/0")
+REDIS_URL = env("REDIS_URL", "redis://redis_ai:6379/0")
 TZ = env("TZ", "America/Sao_Paulo")
