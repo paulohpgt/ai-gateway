@@ -18,6 +18,7 @@ jobs:
         run: |
           echo "OWNER=${{ github.repository_owner }}" >> $GITHUB_ENV
           echo "SHA=${GITHUB_SHA}" >> $GITHUB_ENV
+          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-12)" >> $GITHUB_ENV
 
       - name: Login to GHCR
         uses: docker/login-action@v3
@@ -33,3 +34,4 @@ jobs:
           tags: |
             ghcr.io/${{ env.OWNER }}/ai-gateway:latest
             ghcr.io/${{ env.OWNER }}/ai-gateway:sha-${{ env.SHA }}
+            ghcr.io/${{ env.OWNER }}/ai-gateway:sha-${{ env.SHORT_SHA }}
