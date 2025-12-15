@@ -102,4 +102,5 @@ async def chatwoot_webhook(
     if not _dedupe_once(dedupe_key):
         return {"ok": True, "skipped": "duplicate", "event_id": event_id}
 
+    print(f"[AI-GW] event_id={event_id}\n")
     return {"ok": True, "processed": True, "event_id": event_id}
